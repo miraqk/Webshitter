@@ -1,0 +1,19 @@
+{
+    "name": "Webshitter",
+    "version": "0.2",
+    "description": "wanted: Chrome extension that will automatically insert an h after the s in 'website'",
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "It's the Webshitter!"
+    },
+    "content_scripts": [
+        {
+            "matches": [ "<all_urls>" ],
+            "js": [ "webshitter.js" ],
+            "run_at": "document_end",
+            "all_frames": true
+        }
+    ],
+    "permissions": [ "tabs", "http://*/*" ],
+    "background": { "scripts": [ "webshitter.js" ] }
+}
